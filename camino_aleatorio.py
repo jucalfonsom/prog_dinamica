@@ -7,17 +7,8 @@ from bokeh.plotting import figure, show
 def caminata(campo, borracho, pasos):
     inicio = campo.obtener_coordenada(borracho) #Retorna la coordenada de origen (0, 0)
 
-    x_ilum = []
-    y_ilum = [  ]
-    
     for _ in range(pasos):
         campo.mover_borracho(borracho) #Mueve el borracho
-        a = campo.coor_de_borrr[borracho].x
-        b = campo.coor_de_borrr[borracho].y
-        x_ilum.append(a)
-        y_ilum.append(b)
-
-    graficar(x_ilum, y_ilum)
 
     return inicio.distancia(campo.obtener_coordenada(borracho)) #Retorna nueva coordenada
 
